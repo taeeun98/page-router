@@ -1,4 +1,5 @@
 // next 에서의 데이터 패치
+import TopBadgeLayout from "@/components/TopBadgeLayout";
 import fetchPhotos from "@/utils/fetchPhotos";
 import { InferGetServerSidePropsType, InferGetStaticPropsType } from "next";
 import Head from "next/head";
@@ -67,3 +68,7 @@ function Page({ data }: InferGetStaticPropsType<typeof getStaticProps>) {
   );
 }
 export default Page;
+
+Page.getLayout = (page:React.ReactNode) => {
+  return <TopBadgeLayout>{page}</TopBadgeLayout>
+}
